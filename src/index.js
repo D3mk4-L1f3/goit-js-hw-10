@@ -33,7 +33,7 @@ function onError() {
 if (selectForm) {
   loadString.removeAttribute('hidden');
   errorString.setAttribute('hidden', 'hidden');
-
+  selectForm.setAttribute('hidden', 'hidden');
   fetchBreeds()
     .then(breeds => {
       const interfaceOptions = breeds
