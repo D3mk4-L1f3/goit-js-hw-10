@@ -10,10 +10,12 @@ function displayCatBreedInfo(data) {
   const { name, description, temperament } = breeds[0];
 
   const catCardHTML = `
-    <img src="${url}" alt="${name}" />
-    <h2>${name}</h2>
-    <p>${description}</p>
-    <p>${temperament}</p>
+    <img src="${url}" alt="${name}" width="700" height="500"/>
+    <div>
+      <h2>${name}</h2>
+      <p>${description}</p>
+      <p>${temperament}</p>
+    </div>
   `;
   catDescription.innerHTML = catCardHTML;
 
@@ -63,6 +65,34 @@ if (selectForm) {
       onError();
     });
 }
+
+
+// =====================some styles================
+
+selectForm.style.cssText = `
+  margin: 20px;
+  padding: 5px;
+  font-size: 15px;
+`;
+loadString.style.cssText = `
+  color: green;
+`;
+errorString.style.cssText = `
+  margin: 100px;
+  font-size: 30px;
+  color: red;
+`;
+catDescription.style.cssText = `
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px`;
+
+ 
+
+
+
+
+
 
 
 
