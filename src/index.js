@@ -22,14 +22,12 @@ function displayCatBreedInfo(data) {
   loadString.setAttribute('hidden', 'hidden');
   catDescription.removeAttribute('hidden', 'hidden');
 }
-
 function onError() {
   errorString.removeAttribute('hidden','hidden');
   loadString.setAttribute('hidden', 'hidden');
   catDescription.setAttribute('hidden', 'hidden');
   selectForm.setAttribute('hidden', 'hidden');
 }
-
 if (selectForm) {
   loadString.removeAttribute('hidden');
   errorString.setAttribute('hidden', 'hidden');
