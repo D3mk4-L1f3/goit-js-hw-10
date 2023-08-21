@@ -10,11 +10,11 @@ function displayCatBreedInfo(data) {
   const { name, description, temperament } = breeds[0];
 
   const catCardHTML = `
-    <img src="${url}" alt="${name}" width="700" height="500"/>
+    <img src="${url}" alt="${name}" width="500" height="300"/>
     <div>
       <h2>${name}</h2>
       <p>${description}</p>
-      <p>${temperament}</p>
+      <p>Temperament: ${temperament}</p>
     </div>
   `;
   catDescription.innerHTML = catCardHTML;
