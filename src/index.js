@@ -19,20 +19,20 @@ function displayCatBreedInfo(data) {
   `;
   catDescription.innerHTML = catCardHTML;
 
-  loadString.setAttribute('hidden', '');
-  catDescription.removeAttribute('hidden');
+  loadString.setAttribute('hidden', 'hidden');
+  catDescription.removeAttribute('hidden', 'hidden');
 }
 
 function onError() {
-  errorString.removeAttribute('hidden');
-  loadString.setAttribute('hidden', '');
-  catDescription.setAttribute('hidden', '');
-  selectForm.setAttribute('hidden', '');
+  errorString.removeAttribute('hidden','hidden');
+  loadString.setAttribute('hidden', 'hidden');
+  catDescription.setAttribute('hidden', 'hidden');
+  selectForm.setAttribute('hidden', 'hidden');
 }
 
 if (selectForm) {
   loadString.removeAttribute('hidden');
-  errorString.setAttribute('hidden', '');
+  errorString.setAttribute('hidden', 'hidden');
 
   fetchBreeds()
     .then(breeds => {
@@ -41,20 +41,20 @@ if (selectForm) {
         .join('');
       selectForm.innerHTML = interfaceOptions;
 
-      selectForm.removeAttribute('hidden');
-      loadString.setAttribute('hidden', '');
+      selectForm.removeAttribute('hidden', 'hidden');
+      loadString.setAttribute('hidden', 'hidden');
 
       selectForm.addEventListener('change', evt => {
         const breedId = evt.target.value;
-        loadString.removeAttribute('hidden');
-        catDescription.setAttribute('hidden', '');
-        errorString.setAttribute('hidden', '');
+        loadString.removeAttribute('hidden','hidden');
+        catDescription.setAttribute('hidden', 'hidden');
+        errorString.setAttribute('hidden', 'hidden');
 
         fetchCatByBreed(breedId)
           .then(catData => {
             displayCatBreedInfo(catData);
-            loadString.setAttribute('hidden', '');
-            catDescription.removeAttribute('hidden');
+            loadString.setAttribute('hidden', 'hidden');
+            catDescription.removeAttribute('hidden', 'hidden');
           })
           .catch(error => {
             onError();
