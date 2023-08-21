@@ -28,6 +28,10 @@ function onError() {
   catDescription.setAttribute('hidden', 'hidden');
   selectForm.setAttribute('hidden', 'hidden');
 }
+function hiddenCatDescription() {
+  catDescription.innerHTML = '';
+  catDescription.setAttribute('hidden', 'hidden');
+}
 if (selectForm) {
   loadString.removeAttribute('hidden');
   errorString.setAttribute('hidden', 'hidden');
@@ -45,8 +49,9 @@ if (selectForm) {
       selectForm.addEventListener('change', evt => {
         const breedId = evt.target.value;
         loadString.removeAttribute('hidden','hidden');
-        catDescription.setAttribute('hidden', 'hidden');
         errorString.setAttribute('hidden', 'hidden');
+
+        hiddenCatDescription()
 
         fetchCatByBreed(breedId)
           .then(catData => {
@@ -73,7 +78,9 @@ selectForm.style.cssText = `
   font-size: 15px;
 `;
 loadString.style.cssText = `
+  margin: 100px;
   color: green;
+  font-size: 30px
 `;
 errorString.style.cssText = `
   margin: 100px;
